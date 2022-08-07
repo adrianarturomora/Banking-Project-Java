@@ -1,9 +1,15 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class main {
     public static void main(String[] args)
     {
+
+
         bank_Options();
+        user_Option_Selection(int user_Input, Scanner scanner);
     }
 
     public static void bank_Options()
@@ -21,33 +27,47 @@ public class main {
 
         System.out.println("Welcome to Adrian's Bank! Please select of the options listed above: ");
         user_Input = scanner.nextInt();
+        user_Option_Selection(user_Input, scanner);
     }
 
     public static void user_Option_Selection(int user_Input, Scanner scanner)
     {
-    if(user_Input == 1)
-    {
-        String first_Name;
-        String last_Name;
-        String username;
-        String Password;
-        String email_Address;
+        if(user_Input == 1)
+        {
+           // String first_Name;
+            String last_Name;
+            String username;
+            String Password;
+            String email_Address;
 
-        System.out.println("First Name: ");
-        first_Name = scanner.nextLine();
-        System.out.println("Last Name: ");
+            System.out.println("First Name: ");
+            String first_Name = scanner.nextLine();
 
-        System.out.println("Username: ");
+            try {
+                BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+                writer.write(first_Name);
+                writer.newLine();
+                writer.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+/*
+            System.out.println("Last Name: ");
 
-        System.out.println("Password: ");
+            System.out.println("Username: ");
 
-        System.out.println("Email Address: ");
+            System.out.println("Password: ");
 
-        System.out.println("Phone Number: ");
+            System.out.println("Email Address: ");
 
-        System.out.println("Initial Deposit: ");
+            System.out.println("Phone Number: ");
 
+            System.out.println("Initial Deposit: ");
+*/
+        }else
+            System.exit(0);
     }
-    }
+
+
 }
 
