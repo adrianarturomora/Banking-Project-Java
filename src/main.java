@@ -58,19 +58,6 @@ public class main {
                 throw new RuntimeException(e);
             }
         }
-/*
-            System.out.println("Last Name: ");
-
-            System.out.println("Username: ");
-
-            System.out.println("Password: ");
-
-            System.out.println("Email Address: ");
-
-            System.out.println("Phone Number: ");
-
-            System.out.println("Initial Deposit: ");
-*/
         }
     }
 
